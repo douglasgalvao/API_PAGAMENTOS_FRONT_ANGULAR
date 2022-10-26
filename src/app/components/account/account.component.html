@@ -1,0 +1,58 @@
+<div class="container">
+  <div *ngIf="loader==true">
+    <span class="loader"></span>
+  </div>
+  <div class="content" *ngIf="loader==false">
+    <div class="ct">
+      <span>
+        <h4>
+          Login: <span>{{userInformations.login}}</span>
+        </h4>
+      </span>
+    </div>
+    <div class="ct">
+      <span>
+        <h4>Email: <span> {{userInformations.email}}</span></h4>
+      </span>
+    </div>
+  </div>
+  <div class="content" *ngIf="loader==false">
+
+    <div class="ct">
+      <span>
+        <h4> Phone-Number: <span> {{userInformations.phoneNumber | mask:"(00) 00000-0000"}}</span></h4>
+      </span>
+    </div>
+
+    <div class="ct">
+      <span>
+        <h4>Cpf: <span>{{userInformations.cpf | mask:"000.000.000-00"}}</span></h4>
+      </span>
+    </div>
+  </div>
+  <div class="content" *ngIf="loader==false">
+
+    <div class="ct">
+      <span>
+        <h4>
+          User-ID:<span>{{userInformations.id}}</span>
+        </h4>
+      </span>
+    </div>
+
+    <div class="ct">
+      <span>
+        <h4>Acct-ID:<span> {{userInformations.accountID}}</span> </h4>
+      </span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="content" *ngIf="loader==false">
+    <div class="ct">
+      <span>
+        <h4> Balance <span> {{'$'+balanceAccount}}</span></h4>
+      </span>
+    </div>
+  </div>
+</div>

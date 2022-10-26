@@ -1,0 +1,46 @@
+<div class="containerG">
+
+  <div class="container">
+    <header>
+      <a routerLink="/login">PaymentAPI</a>
+      <div class="coinslog">
+        <button type="submit" [disabled]=""><i class="fa-solid fa-hand-holding-dollar"></i> Get coins </button>
+
+        <button type="submit" [disabled]=""  class="logoOutBtn" (click)="authService.logOut()"><i
+            class="fa-solid fa-arrow-right-from-bracket"></i></button>
+
+      </div>
+    </header>
+
+  </div>
+
+
+  <section>
+    <div *ngIf="actualTab=='deposit'">
+      <button type="button" class="activeGreen" (click)="actualTab='deposit'"><i
+          class="fa-solid fa-hand-holding-dollar"></i><span>Deposit</span> </button>
+
+      <button type="button" (click)="actualTab='account'"><i class="fa-regular fa-user"></i><span>Account</span>
+      </button>
+    </div>
+    <div *ngIf="actualTab=='account'">
+      <button type="button" (click)="actualTab='deposit'"><i
+          class="fa-solid fa-hand-holding-dollar"></i><span>Deposit</span> </button>
+
+      <button type="button" class="activeGreen" (click)="actualTab='account'"><i
+          class="fa-regular fa-user"></i><span>Account</span> </button>
+    </div>
+
+
+  </section>
+
+
+  <section>
+    <div *ngIf="actualTab=='deposit'">
+      <app-deposit></app-deposit>
+    </div>
+    <div *ngIf="actualTab=='account'">
+      <app-account></app-account>
+    </div>
+  </section>
+</div>

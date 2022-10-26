@@ -1,0 +1,33 @@
+<div class="deposit">
+  <div *ngIf="loader==false">
+    <span class="loader"></span>
+  </div>
+  <div class="content" *ngIf="loader==true">
+    <div class="balance">
+      <h3><i class="fa-solid fa-wallet"></i> ${{actualBalance}}</h3>
+      <h3> <span>My id:</span>{{accountIdPlaceHolder}}</h3>
+    </div>
+    <form [formGroup]="form" (submit)="onSubmit()">
+      <div class="labelInputs">
+        <label>AMOUNT:</label>
+        <input formControlName="balance" type="text" currencyMask>
+      </div>
+      <div class="labelInputs">
+        <label>ID ACCOUNT:</label>
+        <!-- mask="AAAAAAAA-AAAA-AAAA-AAAA-AAAAAAAAAAAA" Mask ACCOUNT_ID-->
+        <input formControlName="id" type="text" placeholder={{accountIdPlaceHolder}}>
+      </div>
+      <div class="btn">
+        <button type="submit" [disabled]="form.invalid"> <i class="fa-solid fa-money-bill-transfer"></i> Transfer
+        </button>
+      </div>
+
+      <div *ngIf="depositSucess.length" class="btn">
+        <h3 class="depositSucess"><i class="fa-brands fa-fort-awesome"></i> {{depositSucess}} <i
+            class="fa-brands fa-fort-awesome"></i> </h3>
+      </div>
+
+    </form>
+
+  </div>
+</div>

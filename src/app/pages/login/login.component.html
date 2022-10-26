@@ -1,0 +1,28 @@
+<div class="container">
+
+
+  <div class="loginContent">
+    <div class="loginTitle">
+      <h2>PaymentAPI</h2>
+    </div>
+
+    <form [formGroup]="formLogin" (submit)="onSubmit()">
+
+      <div class="login">
+        <label for="login">Email:</label>
+        <input type="text" id="login" formControlName="login">
+      </div>
+
+      <div class="password">
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password">
+      </div>
+
+      <button type="submit" [disabled]="formLogin.invalid">Login</button>
+
+      <a routerLink="/register">Don't you have any account yet? Register right here</a>
+    </form>
+    <!-- {{formLogin.value | json}} -->
+
+  </div>
+</div>

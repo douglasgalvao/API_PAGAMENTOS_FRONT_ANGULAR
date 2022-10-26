@@ -1,0 +1,126 @@
+.deposit {
+  .content {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    label {
+      font-family: "Cairo";
+      font-style: normal;
+      font-weight: 700;
+      color: white;
+      font-size: 20px;
+      line-height: 30px;
+    }
+    input {
+      background-color: #1e1e1e;
+      min-width: 70vh;
+      padding: 14px 12px;
+      color: white;
+      border-radius: 4px;
+      border: 0.1em solid transparent;
+      transition: all 0.4s ease;
+      font-size: medium;
+      &:focus,
+      &:active {
+        border-color: #54c23e;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      .btn {
+        display: flex;
+        justify-content: center;
+        button {
+          min-width: 30%;
+          background-color: #54c23e;
+          font-family: "Cairo";
+          font-style: normal;
+          font-weight: 700;
+          color: white;
+          font-size: 20px;
+          line-height: 30px;
+          border-radius: 5px;
+          padding: 12px;
+          margin: 30px;
+          &:hover {
+            background-color: #54c23ec4;
+            color: #54c23e;
+            transition: 0.3s;
+          }
+
+          cursor: pointer;
+          i {
+            background-color: #54c23e;
+          }
+        }
+      }
+
+      .depositSucess {
+        color: #54c23e;
+      }
+    }
+
+    .labelInputs {
+      margin:10px 0px;
+      input {
+        display: flex;
+        justify-content: right;
+        text-align: right;
+      }
+    }
+  }
+}
+
+.balance {
+  h3 {
+    margin: 10px;
+    color: #54c23e;
+    border: 0.1em solid #54c23e;
+    max-width: max-content;
+    padding: 0px 10px;
+    border-radius: 4px;
+    i {
+      margin: 0px 10px;
+    }
+    &:last-child {
+      color: #1e1e1e54;
+    }
+
+    span {
+      color: #54c23e;
+      margin: 0px 5px;
+    }
+  }
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #54c23e;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  left: 20px;
+  top: 31px;
+  border: 10px solid transparent;
+  border-right-color: #54c23e;
+  transform: rotate(-40deg);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

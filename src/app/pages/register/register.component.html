@@ -1,0 +1,62 @@
+<div class="containerG">
+
+  <div class="container">
+
+    <form action="" [formGroup]="formInputs" (submit)="onSubmit()">
+      <header>
+        <a routerLink="/login">PaymentAPI</a>
+        <button type="submit" [disabled]="formInputs.invalid"><i class="fa-solid fa-user-plus"></i> Create User</button>
+      </header>
+      <section>
+        <div>
+          <label for="">E-mail:</label>
+          <input [ngClass]="{
+          'invalid': f['email'].invalid && (f['email'].dirty || f['email'].touched)
+        }" type="text" placeholder="Enter a valid email address" formControlName="email">
+          <div *ngIf="f['email'].invalid && (f['email'].dirty || f['email'].touched)">
+            <span class="inputError" *ngIf="f['email'].errors?.['email']">Você deve preencher um email válido</span>
+            <span class="inputError" *ngIf="f['email'].errors?.['required']">Este campo é obrigatório</span>
+          </div>
+
+        </div>
+        <div>
+          <label for="">Login:</label>
+          <input [ngClass]="{
+          'invalid': f['login'].invalid && (f['login'].dirty || f['login'].touched)
+        }" type="text" placeholder="Enter your username" formControlName="login">
+          <div *ngIf="f['login'].invalid && (f['login'].dirty || f['login'].touched)">
+            <span class="inputError" *ngIf="f['login'].errors?.['required']">Este campo é obrigatório</span>
+          </div>
+        </div>
+        <div>
+          <label for="">CPF:</label>
+          <input [ngClass]="{
+          'invalid': f['cpf'].invalid && (f['cpf'].dirty || f['cpf'].touched)
+        }" type="text" placeholder="Enter your CPF" formControlName="cpf" mask="000.000.000-00">
+          <div *ngIf="f['cpf'].invalid && (f['cpf'].dirty || f['cpf'].touched)">
+            <span class="inputError" *ngIf="f['cpf'].errors?.['required']">Este campo é obrigatório</span>
+          </div>
+        </div>
+        <div>
+          <label for="">Password:</label>
+          <input [ngClass]="{
+          'invalid': f['password'].invalid && (f['password'].dirty || f['password'].touched)
+        }" type="password" placeholder="Enter a password" formControlName="password">
+          <div *ngIf="f['password'].invalid && (f['password'].dirty || f['password'].touched)">
+            <span class="inputError" *ngIf="f['password'].errors?.['required']">Este campo é obrigatório</span>
+          </div>
+        </div>
+        <div>
+          <label for="">Phone Number:</label>
+          <input [ngClass]="{
+          'invalid': f['phoneNumber'].invalid && (f['phoneNumber'].dirty || f['phoneNumber'].touched)
+        }" type="text" placeholder="Enter your phone number" formControlName="phoneNumber" mask="(00) 00000-0000">
+          <div *ngIf="f['phoneNumber'].invalid && (f['phoneNumber'].dirty || f['phoneNumber'].touched)">
+            <span class="inputError" *ngIf="f['phoneNumber'].errors?.['required']">Este campo é obrigatório</span>
+          </div>
+        </div>
+      </section>
+    </form>
+
+  </div>
+</div>
