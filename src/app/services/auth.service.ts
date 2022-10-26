@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-
   @LocalStorage(environment.session.token) token!: string
   @LocalStorage(environment.session.user) user!: string
 
