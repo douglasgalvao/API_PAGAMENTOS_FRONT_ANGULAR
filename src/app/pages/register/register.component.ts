@@ -27,8 +27,10 @@ export class RegisterComponent implements OnInit {
 
 
   onSubmit() {
+
     if (!this.formInputs.valid) {
       alert("Preencha todos os campos");
+
       return;
     }
     this.created = true;
