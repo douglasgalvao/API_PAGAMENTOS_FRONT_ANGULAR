@@ -5,7 +5,13 @@
     <form action="" [formGroup]="formInputs" (submit)="onSubmit()">
       <header>
         <a routerLink="/login">PaymentAPI</a>
-        <button type="submit" [disabled]="formInputs.invalid"><i class="fa-solid fa-user-plus"></i> Create User</button>
+        <div *ngIf="created==true">
+          <span class="loader"></span>
+          <button type="submit" [disabled]="formInputs.invalid"><i class="fa-solid fa-user-plus"></i> Create User</button>
+        </div>
+        <div *ngIf="created!=true">
+          <button type="submit" [disabled]="formInputs.invalid"><i class="fa-solid fa-user-plus"></i> Create User</button>
+        </div>
       </header>
       <section>
         <div>

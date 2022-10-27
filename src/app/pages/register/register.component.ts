@@ -13,6 +13,7 @@ import { UserService } from 'src/app/services/user.service';
 export class RegisterComponent implements OnInit {
 
   public formInputs!: FormGroup;
+  public created!: boolean;
 
   constructor(
     private form: FormBuilder,
@@ -30,10 +31,11 @@ export class RegisterComponent implements OnInit {
       alert("Preencha todos os campos");
       return;
     }
+    this.created = true;
     let form = this.formInputs.value;
     let userBank = new UserBankRequestModel(form.email, form.login, form.cpf, form.phoneNumber, form.password);
     this.userService.createUser(userBank).subscribe((retorno: UserBankResponseModel) => {
-      alert("User created with success");
+      this.created = false;
       this.router.navigateByUrl("/login");
     });
 
