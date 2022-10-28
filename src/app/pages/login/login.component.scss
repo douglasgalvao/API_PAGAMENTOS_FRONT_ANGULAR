@@ -1,11 +1,10 @@
-.container{
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-
 
 .loginContent {
   align-items: center;
@@ -67,10 +66,41 @@ form {
   :hover {
     filter: brightness(0.8);
   }
-  a {
-    color:#949491;
-    font-size:0.8rem;
-
+  div{
+    justify-content: center;
+    display: flex;
+    min-width: 100%;
   }
 
+  a {
+    color: #949491;
+    font-size: 0.8rem;
+  }
+  span {
+    text-align: center;
+    i {
+      font-size: larger;
+      color: #54c23e;
+    }
+  }
+  .loader {
+    width: 28px;
+    height: 28px;
+    margin: 5px;
+    border: 5px solid #54c23e;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }

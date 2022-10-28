@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { LocalStorageService } from 'angular-web-storage';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -11,12 +9,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class DashboardComponent implements OnInit {
 
   public actualTab: string = "deposit";
-  public authService: AuthService
-  constructor(
-    private storage: LocalStorageService,
-    authService: AuthService
-  ) {
-    this.authService = authService
+  public authService!: AuthService;
+  constructor() {
   }
 
 

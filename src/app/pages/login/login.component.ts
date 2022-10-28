@@ -8,11 +8,12 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
 
   public formLogin!: FormGroup;
-  public returnUrl!: string
-
+  public returnUrl!: string;
+  public logged!: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   async onSubmit(): Promise<void> {
+    this.logged=false;
     if (!this.formLogin.valid) {
       alert("Preencha todos os campos");
       return;
@@ -35,6 +37,7 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(this.formLogin.value).subscribe(
       (token: string) => {
+        this.logged=true;
         this.authService.saveToken(token);
         this.router.navigateByUrl(this.returnUrl);
       }

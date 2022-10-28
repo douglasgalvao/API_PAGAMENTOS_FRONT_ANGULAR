@@ -19,10 +19,8 @@ export class AuthService {
   ) { }
 
   login(data: { login: string, password: string }): Observable<string> {
-
     return this.httpClient.post(environment.apiurl.concat("/login"),
       data, { 'responseType': 'text' });
-
   }
 
   saveToken(jwt: string) {
