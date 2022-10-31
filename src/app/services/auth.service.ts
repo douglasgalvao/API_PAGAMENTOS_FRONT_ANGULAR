@@ -39,6 +39,7 @@ export class AuthService {
   }
 
   logOut() {
+    console.log("eu entrei aqui");
     this.storageService.remove(environment.session.token);
     this.storageService.remove(environment.session.user);
     this.router.navigate(["/login"]);
