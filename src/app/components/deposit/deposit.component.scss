@@ -15,7 +15,7 @@ width:100%;
     }
     input {
       background-color: #1e1e1e;
-      width: 70%;
+      width: 100%;
       padding: 14px 12px;
       color: white;
       border-radius: 4px;
@@ -30,6 +30,7 @@ width:100%;
     form {
       display: flex;
       flex-direction: column;
+      width:100%;
       .btn {
         display: flex;
         justify-content: center;
