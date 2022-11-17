@@ -9,10 +9,10 @@
 
 body{
   font-family: 'Cairo', sans-serif;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #121214;
   display: flex;
-  width: 100%;
+  width: 100vw;
   justify-content: center;
   gap: 1rem;
 }
