@@ -2,10 +2,12 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+ width:100%;
 }
 .content{
   display: flex;
   justify-content: space-between;
+  width:100%;
   &:last-child{
     justify-content: center;
     align-items: center;
