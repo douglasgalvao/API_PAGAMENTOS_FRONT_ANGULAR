@@ -1,7 +1,7 @@
 header {
   display: flex;
   justify-content: space-between;
-  min-width: 100%;
+  width: 100%;
   max-height: 5rem;
   align-items: center;
   padding: 20px;
@@ -52,7 +52,6 @@ header {
   background-color: #202024;
   justify-content: space-between;
   align-items: center;
-  min-width: 80vh;
   width: 100%;
   padding: 8px 12px;
   border-radius: 4px;
